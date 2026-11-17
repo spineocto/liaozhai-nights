@@ -1,0 +1,18 @@
+# dependencies & builds
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+.netlify/
+
+# secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# NOTE: do NOT ignore /.kiro — it is required for Kiroween judging.
