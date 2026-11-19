@@ -1,44 +1,80 @@
-/* Book Container Styles */
+/* Book Container Styles - 恐怖氛圍 */
 
 .book-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+  background: #0a0505; /* 更深的黑暗 */
   padding: 20px;
   position: relative;
   overflow: hidden;
 }
 
-/* 書本頁面 */
+/* 添加陰影效果 */
+.book-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* 書本頁面 - 泛黃舊紙 */
 .book-page {
   max-width: 800px;
   width: 100%;
   min-height: 600px;
-  background: linear-gradient(to bottom, #f4ead5 0%, #e8dcc8 100%);
+  background: #e8dcc8; /* 更舊的紙張色 */
   box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.5),
-    inset 0 0 100px rgba(0, 0, 0, 0.05);
-  border-radius: 8px;
+    0 10px 60px rgba(0, 0, 0, 0.9),
+    inset 0 0 100px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
   padding: 60px 40px;
   position: relative;
   
-  /* 宣紙紋理效果 */
+  /* 舊紙張紋理和污漬 */
   background-image: 
-    radial-gradient(circle at 20% 80%, rgba(139, 117, 87, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 117, 87, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 30% 70%, rgba(139, 69, 19, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(139, 69, 19, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(0, 0, 0, 0.03) 0%, transparent 30%),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 2px,
-      rgba(139, 117, 87, 0.02) 2px,
-      rgba(139, 117, 87, 0.02) 4px
+      rgba(139, 117, 87, 0.03) 2px,
+      rgba(139, 117, 87, 0.03) 4px
     );
   
-  /* 書本邊緣效果 */
-  border: 2px solid rgba(139, 117, 87, 0.3);
-  border-left: 8px solid rgba(139, 117, 87, 0.4);
+  /* 深色邊框 */
+  border: 3px solid #3a2a1a;
+  border-left: 8px solid #2a1a0a;
+}
+
+/* 燭光閃爍效果 */
+@keyframes candleFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.book-page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 200, 100, 0.05) 0%,
+    transparent 60%
+  );
+  animation: candleFlicker 3s infinite;
+  pointer-events: none;
 }
 
 /* 響應式設計 */
@@ -52,7 +88,6 @@
 @media (max-width: 480px) {
   .book-page {
     padding: 32px 20px;
-    border-radius: 4px;
   }
   
   .book-container {

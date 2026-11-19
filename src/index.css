@@ -1,11 +1,21 @@
-/* Global Styles */
+/* Global Styles - 古典聊齋風格 */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
 
 :root {
-  font-family: 'Noto Serif TC', 'Noto Serif SC', serif;
+  /* 宋體字體系統 */
+  font-family: 'Noto Serif TC', 'Noto Serif SC', 'SimSun', 'STSong', serif;
   line-height: 1.6;
   font-weight: 400;
+  
+  /* 色彩系統 */
+  --paper-bg: #f5f5dc;
+  --paper-light: #fff8e7;
+  --ink-dark: #2c2c2c;
+  --ink-black: #1a1a1a;
+  --cinnabar-red: #8b0000;
+  --wood-brown: #6b5840;
+  --light-brown: #8b7557;
   
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,9 +31,38 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--ink-black);
 }
 
 #root {
   min-height: 100vh;
 }
 
+/* 標題使用較粗的字重 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--ink-dark);
+}
+
+/* 連結樣式 */
+a {
+  color: var(--cinnabar-red);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+a:hover {
+  border-bottom-color: var(--cinnabar-red);
+}
+
+/* 選擇文字時的顏色 */
+::selection {
+  background: var(--cinnabar-red);
+  color: var(--paper-bg);
+}
+
+::-moz-selection {
+  background: var(--cinnabar-red);
+  color: var(--paper-bg);
+}

@@ -1,4 +1,4 @@
-/* Ending View Styles */
+/* Ending View Styles - 古典風格 */
 
 .ending-view {
   animation: fadeIn 0.8s ease-in;
@@ -14,28 +14,28 @@
 
 .ending-title-zh {
   font-size: 32px;
-  color: #c44536;
+  color: #8b0000;
   font-weight: 700;
   letter-spacing: 8px;
 }
 
 .ending-title-en {
   font-size: 16px;
-  color: #8b7557;
+  color: #6b5840;
   font-style: italic;
   letter-spacing: 2px;
 }
 
-/* 文言文文字 */
+/* 文言文文字 - 直角邊框 */
 .classical-text {
-  background: rgba(255, 255, 255, 0.5);
+  background: #fff8e7;
   padding: 32px 24px;
-  border-radius: 8px;
-  border: 2px solid #8b7557;
+  border-radius: 0; /* 直角 */
+  border: 3px double #2c2c2c; /* 雙線邊框 */
   margin-bottom: 40px;
   line-height: 2.2;
   font-size: 18px;
-  color: #3a2a1a;
+  color: #2c2c2c;
   letter-spacing: 1px;
 }
 
@@ -43,17 +43,19 @@
   cursor: pointer;
   padding: 2px 0;
   transition: all 0.2s ease;
-  border-radius: 3px;
+  border-bottom: 2px solid transparent;
 }
 
 .classical-sentence:hover {
-  background: rgba(139, 117, 87, 0.15);
+  background: #fff;
   padding: 2px 4px;
+  border-bottom: 2px solid #8b7557;
 }
 
 .classical-sentence.selected {
-  background: rgba(196, 69, 54, 0.2);
+  background: #fff;
   padding: 2px 4px;
+  border-bottom: 2px solid #8b0000;
 }
 
 .tap-hint {
@@ -64,14 +66,14 @@
   font-style: italic;
 }
 
-/* 翻譯覆蓋層 */
+/* 翻譯覆蓋層 - 古典風格 */
 .translation-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(26, 15, 10, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,16 +83,16 @@
 }
 
 .translation-content {
-  background: linear-gradient(to bottom, #f4ead5 0%, #e8dcc8 100%);
+  background: #f5f5dc;
   padding: 32px;
-  border-radius: 12px;
+  border-radius: 0; /* 直角 */
   max-width: 600px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  border: 3px solid #8b7557;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+  border: 3px solid #2c2c2c;
 }
 
 .close-button {
@@ -99,10 +101,10 @@
   right: 16px;
   width: 32px;
   height: 32px;
-  border: none;
-  background: #c44536;
-  color: white;
-  border-radius: 50%;
+  border: 2px solid #2c2c2c;
+  background: #fff;
+  color: #2c2c2c;
+  border-radius: 0; /* 直角 */
   cursor: pointer;
   font-size: 18px;
   display: flex;
@@ -112,8 +114,9 @@
 }
 
 .close-button:hover {
-  background: #a03428;
-  transform: scale(1.1);
+  background: #8b0000;
+  color: #fff;
+  border-color: #8b0000;
 }
 
 .translation-section {
@@ -126,16 +129,18 @@
 
 .translation-label {
   font-size: 14px;
-  color: #8b7557;
+  color: #6b5840;
   margin-bottom: 8px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
+  border-bottom: 2px solid #6b5840;
+  padding-bottom: 4px;
 }
 
 .translation-text {
   font-size: 16px;
-  color: #3a2a1a;
+  color: #2c2c2c;
   line-height: 1.8;
 }
 
@@ -148,26 +153,26 @@
 }
 
 .translation-block {
-  background: rgba(255, 255, 255, 0.4);
+  background: #fff8e7;
   padding: 24px;
-  border-radius: 8px;
-  border-left: 4px solid #8b7557;
+  border-radius: 0; /* 直角 */
+  border-left: 4px solid #2c2c2c;
 }
 
 .translation-heading {
   font-size: 16px;
-  color: #6b5840;
+  color: #2c2c2c;
   margin-bottom: 12px;
   font-weight: 600;
 }
 
 .translation-body {
   font-size: 16px;
-  color: #3a2a1a;
+  color: #2c2c2c;
   line-height: 1.8;
 }
 
-/* 重新開始按鈕 */
+/* 重新開始按鈕 - 朱砂紅 */
 .restart-container {
   text-align: center;
   margin-top: 40px;
@@ -175,10 +180,10 @@
 
 .restart-button {
   padding: 16px 48px;
-  background: white;
-  border: 3px solid #c44536;
-  border-radius: 8px;
-  color: #c44536;
+  background: #fff;
+  border: 3px solid #8b0000;
+  border-radius: 0; /* 直角 */
+  color: #8b0000;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
@@ -187,10 +192,15 @@
 }
 
 .restart-button:hover {
-  background: #c44536;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(196, 69, 54, 0.3);
+  background: #8b0000;
+  color: #f5f5dc;
+  box-shadow: 4px 4px 0 #2c2c2c;
+  transform: translate(-2px, -2px);
+}
+
+.restart-button:active {
+  transform: translate(0, 0);
+  box-shadow: 2px 2px 0 #2c2c2c;
 }
 
 .button-text-zh {
