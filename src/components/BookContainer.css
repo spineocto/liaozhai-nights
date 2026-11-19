@@ -1,0 +1,61 @@
+/* Book Container Styles */
+
+.book-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 書本頁面 */
+.book-page {
+  max-width: 800px;
+  width: 100%;
+  min-height: 600px;
+  background: linear-gradient(to bottom, #f4ead5 0%, #e8dcc8 100%);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 0 100px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 60px 40px;
+  position: relative;
+  
+  /* 宣紙紋理效果 */
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(139, 117, 87, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 117, 87, 0.03) 0%, transparent 50%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(139, 117, 87, 0.02) 2px,
+      rgba(139, 117, 87, 0.02) 4px
+    );
+  
+  /* 書本邊緣效果 */
+  border: 2px solid rgba(139, 117, 87, 0.3);
+  border-left: 8px solid rgba(139, 117, 87, 0.4);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .book-page {
+    padding: 40px 24px;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-page {
+    padding: 32px 20px;
+    border-radius: 4px;
+  }
+  
+  .book-container {
+    padding: 12px;
+  }
+}

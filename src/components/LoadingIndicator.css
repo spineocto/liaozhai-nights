@@ -1,0 +1,54 @@
+/* Loading Indicator Styles */
+
+.loading-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* 蠟燭火焰動畫 */
+.candle-flame {
+  width: 40px;
+  height: 60px;
+  margin: 0 auto 30px;
+  background: linear-gradient(to bottom, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 0 20px rgba(255, 107, 53, 0.8),
+    0 0 40px rgba(255, 107, 53, 0.4);
+  animation: flicker 2s infinite alternate;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05) translateY(-2px);
+    opacity: 0.9;
+  }
+}
+
+.loading-text-zh {
+  font-size: 20px;
+  color: #4a3728;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+.loading-text-en {
+  font-size: 16px;
+  color: #8b7557;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .loading-text-zh {
+    font-size: 18px;
+  }
+  
+  .loading-text-en {
+    font-size: 14px;
+  }
+}
