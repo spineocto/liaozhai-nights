@@ -1,4 +1,4 @@
-/* Global App Styles - 古典風格 */
+/* Global App Styles - prototype palette, text unchanged */
 
 * {
   box-sizing: border-box;
@@ -7,18 +7,23 @@
 }
 
 body {
-  font-family: 'Noto Serif TC', 'Noto Serif SC', 'SimSun', 'STSong', serif;
+  font-family: var(--serif, 'Noto Serif', 'Noto Serif TC', 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1a0f0a;
-  color: #2c2c2c;
+  background: #0b0908;
+  color: #37291a;
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* 移除所有預設圓角 */
+/* Keep the prototype's square-corner book look */
 button, input, select, textarea {
   border-radius: 0;
+}
+
+button:focus-visible, a:focus-visible {
+  outline: 2px solid #f0b64f;
+  outline-offset: 2px;
 }

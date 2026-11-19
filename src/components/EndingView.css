@@ -1,4 +1,4 @@
-/* Ending View Styles - 古典風格 */
+/* Ending View Styles - prototype palette, text unchanged */
 
 .ending-view {
   animation: fadeIn 0.8s ease-in;
@@ -12,10 +12,13 @@
   gap: 8px;
 }
 
+/* Short 2-character title only - brush stack falls back brush -> Kai,
+   never brush -> Song in the same word. */
 .ending-title-zh {
+  font-family: var(--brush, 'Ma Shan Zheng', 'Zhi Mang Xing', 'Kaiti TC', serif);
   font-size: 32px;
-  color: #8b0000;
-  font-weight: 700;
+  color: #b3352c;
+  font-weight: 400;
   letter-spacing: 8px;
 }
 
@@ -26,16 +29,17 @@
   letter-spacing: 2px;
 }
 
-/* 文言文文字 - 直角邊框 */
+/* Classical text - use the full serif stack, not Noto Serif TC alone */
 .classical-text {
-  background: #fff8e7;
+  background: #f3ead3;
   padding: 32px 24px;
-  border-radius: 0; /* 直角 */
-  border: 3px double #2c2c2c; /* 雙線邊框 */
+  border-radius: 0;
+  border: 3px double #37291a;
   margin-bottom: 40px;
   line-height: 2.2;
   font-size: 18px;
-  color: #2c2c2c;
+  font-family: var(--serif, 'Noto Serif', 'Noto Serif TC', 'Noto Serif SC', serif);
+  color: #37291a;
   letter-spacing: 1px;
 }
 
@@ -55,7 +59,7 @@
 .classical-sentence.selected {
   background: #fff;
   padding: 2px 4px;
-  border-bottom: 2px solid #8b0000;
+  border-bottom: 2px solid #b3352c;
 }
 
 .tap-hint {
@@ -66,14 +70,14 @@
   font-style: italic;
 }
 
-/* 翻譯覆蓋層 - 古典風格 */
+/* Translation overlay */
 .translation-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 15, 10, 0.85);
+  background: rgba(11, 9, 8, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,16 +87,16 @@
 }
 
 .translation-content {
-  background: #f5f5dc;
+  background: #f3ead3;
   padding: 32px;
-  border-radius: 0; /* 直角 */
+  border-radius: 0;
   max-width: 600px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-  border: 3px solid #2c2c2c;
+  border: 3px solid #37291a;
 }
 
 .close-button {
@@ -101,10 +105,10 @@
   right: 16px;
   width: 32px;
   height: 32px;
-  border: 2px solid #2c2c2c;
+  border: 2px solid #37291a;
   background: #fff;
-  color: #2c2c2c;
-  border-radius: 0; /* 直角 */
+  color: #37291a;
+  border-radius: 0;
   cursor: pointer;
   font-size: 18px;
   display: flex;
@@ -114,9 +118,9 @@
 }
 
 .close-button:hover {
-  background: #8b0000;
+  background: #b3352c;
   color: #fff;
-  border-color: #8b0000;
+  border-color: #b3352c;
 }
 
 .translation-section {
@@ -140,11 +144,11 @@
 
 .translation-text {
   font-size: 16px;
-  color: #2c2c2c;
+  color: #37291a;
   line-height: 1.8;
 }
 
-/* 完整翻譯 */
+/* Full translations */
 .full-translations {
   display: flex;
   flex-direction: column;
@@ -153,26 +157,26 @@
 }
 
 .translation-block {
-  background: #fff8e7;
+  background: #f3ead3;
   padding: 24px;
-  border-radius: 0; /* 直角 */
-  border-left: 4px solid #2c2c2c;
+  border-radius: 0;
+  border-left: 4px solid #37291a;
 }
 
 .translation-heading {
   font-size: 16px;
-  color: #2c2c2c;
+  color: #37291a;
   margin-bottom: 12px;
   font-weight: 600;
 }
 
 .translation-body {
   font-size: 16px;
-  color: #2c2c2c;
+  color: #37291a;
   line-height: 1.8;
 }
 
-/* 重新開始按鈕 - 朱砂紅 */
+/* Restart button - cinnabar seal style from the prototype */
 .restart-container {
   text-align: center;
   margin-top: 40px;
@@ -180,27 +184,28 @@
 
 .restart-button {
   padding: 16px 48px;
-  background: #fff;
-  border: 3px solid #8b0000;
-  border-radius: 0; /* 直角 */
-  color: #8b0000;
+  background: linear-gradient(160deg, #b3352c, #7e1f1a);
+  border: 3px solid #7e1f1a;
+  border-radius: 0;
+  color: #f3ead3;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-flex;
   flex-direction: column;
   gap: 4px;
+  font-family: var(--serif, 'Noto Serif', 'Noto Serif TC', serif);
 }
 
 .restart-button:hover {
-  background: #8b0000;
-  color: #f5f5dc;
-  box-shadow: 4px 4px 0 #2c2c2c;
+  background: linear-gradient(160deg, #e05244, #b3352c);
+  color: #fff;
+  box-shadow: 4px 4px 0 #37291a;
   transform: translate(-2px, -2px);
 }
 
 .restart-button:active {
   transform: translate(0, 0);
-  box-shadow: 2px 2px 0 #2c2c2c;
+  box-shadow: 2px 2px 0 #37291a;
 }
 
 .button-text-zh {
@@ -213,22 +218,22 @@
   opacity: 0.9;
 }
 
-/* 響應式設計 */
+/* Responsive */
 @media (max-width: 768px) {
   .ending-title-zh {
     font-size: 28px;
     letter-spacing: 6px;
   }
-  
+
   .classical-text {
     font-size: 16px;
     padding: 24px 20px;
   }
-  
+
   .translation-content {
     padding: 24px 20px;
   }
-  
+
   .translation-body {
     font-size: 15px;
   }
@@ -239,16 +244,16 @@
     font-size: 24px;
     letter-spacing: 4px;
   }
-  
+
   .classical-text {
     font-size: 15px;
     padding: 20px 16px;
   }
-  
+
   .full-translations {
     gap: 20px;
   }
-  
+
   .translation-block {
     padding: 20px;
   }

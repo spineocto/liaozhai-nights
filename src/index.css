@@ -1,22 +1,52 @@
-/* Global Styles - 古典聊齋風格 */
+/* Global Styles - prototype style tokens, text unchanged */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Zhi+Mang+Xing&family=Liu+Jian+Mao+Cao&family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Serif:ital,wght@0,400;0,600;0,700;0,900;1,400&display=swap');
 
 :root {
-  /* 宋體字體系統 */
-  font-family: 'Noto Serif TC', 'Noto Serif SC', 'SimSun', 'STSong', serif;
-  line-height: 1.6;
-  font-weight: 400;
-  
-  /* 色彩系統 */
-  --paper-bg: #f5f5dc;
-  --paper-light: #fff8e7;
-  --ink-dark: #2c2c2c;
-  --ink-black: #1a1a1a;
-  --cinnabar-red: #8b0000;
+  /* Prototype palette - Ink Black / Rice Paper / Cinnabar / Candle Gold / Jade Mist */
+  --ink: #0b0908;
+  --ink-2: #14100d;
+  --ink-3: #1e1712;
+  --paper: #ecdfbe;
+  --paper-2: #e2d2ab;
+  --paper-dim: #c4b696;
+  --paper-faint: #9a8a6d;
+  --cinnabar: #b3352c;
+  --cinnabar-hi: #e05244;
+  --cinnabar-deep: #7e1f1a;
+  --gold: #c9a86a;
+  --gold-dim: #9a7f4e;
+  --candle: #f0b64f;
+  --candle-hi: #ffd98a;
+  --jade: #6f9a85;
+  --bone: #f3ead3;
+  --line: rgba(201, 168, 106, 0.28);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+
+  /* Backwards-compatible names used by older CSS */
+  --paper-bg: #ecdfbe;
+  --paper-light: #f3ead3;
+  --ink-dark: #37291a;
+  --ink-black: #0b0908;
+  --cinnabar-red: #b3352c;
   --wood-brown: #6b5840;
   --light-brown: #8b7557;
-  
+
+  /*
+   * Font fix: the prototype used Ma Shan Zheng with Noto Serif TC as its
+   * fallback, so one word could mix brush + Song serif when a glyph was
+   * missing, and Noto Serif has no CJK glyphs while Songti TC is macOS-only.
+   * Body text therefore uses a full CJK serif stack (Windows/Linux included),
+   * and the brush stack falls back brush -> brush -> Kai (calligraphy-like)
+   * before ever reaching a Song face.
+   */
+  --serif: 'Noto Serif', 'Noto Serif TC', 'Noto Serif SC', 'Songti SC', 'STSong', 'SimSun', 'PMingLiU', serif;
+  --brush: 'Ma Shan Zheng', 'Zhi Mang Xing', 'Liu Jian Mao Cao', 'Kaiti TC', 'KaiTi', 'STKaiti', 'Noto Serif TC', serif;
+
+  font-family: var(--serif);
+  line-height: 1.75;
+  font-weight: 400;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,38 +61,51 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--ink-black);
+  background: var(--ink);
+  color: #37291a;
+  font-family: var(--serif);
 }
 
 #root {
   min-height: 100vh;
 }
 
-/* 標題使用較粗的字重 */
+/* Headings use the serif stack, never the brush face, so body text
+   never mixes brush + Song in one word. Brush is only for short
+   decorative titles / seals (see EndingView.css). */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--serif);
   font-weight: 700;
-  color: var(--ink-dark);
+  color: #37291a;
 }
 
-/* 連結樣式 */
+/* Links */
 a {
-  color: var(--cinnabar-red);
+  color: var(--cinnabar);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border-color 0.2s ease;
 }
 
 a:hover {
-  border-bottom-color: var(--cinnabar-red);
+  border-bottom-color: var(--cinnabar);
 }
 
-/* 選擇文字時的顏色 */
+/* Selection colour */
 ::selection {
-  background: var(--cinnabar-red);
-  color: var(--paper-bg);
+  background: var(--cinnabar);
+  color: var(--bone);
 }
 
 ::-moz-selection {
-  background: var(--cinnabar-red);
-  color: var(--paper-bg);
+  background: var(--cinnabar);
+  color: var(--bone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

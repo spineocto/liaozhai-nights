@@ -1,12 +1,12 @@
-/* Error Message Styles - 符咒風格 */
+/* Error Message Styles - prototype cinnabar / rice-paper */
 
 .error-container {
   text-align: center;
   padding: 40px 20px;
-  background: #fff8e7;
-  border: 3px solid #8b0000;
-  border-radius: 0; /* 直角 */
-  box-shadow: 4px 4px 0 rgba(139, 0, 0, 0.3);
+  background: #f3ead3;
+  border: 3px solid #b3352c;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 rgba(179, 53, 44, 0.3);
 }
 
 .error-talisman {
@@ -26,7 +26,7 @@
 
 .error-title-zh {
   font-size: 20px;
-  color: #8b0000;
+  color: #b3352c;
   margin: 10px 0 5px;
   font-weight: 600;
 }
@@ -40,11 +40,11 @@
 
 .error-message {
   font-size: 14px;
-  color: #2c2c2c;
+  color: #37291a;
   margin: 20px 0;
   padding: 12px;
   background: #fff;
-  border-radius: 0; /* 直角 */
+  border-radius: 0;
   border: 1px solid #8b7557;
 }
 
@@ -59,7 +59,7 @@
 .error-button {
   padding: 12px 24px;
   border: 2px solid;
-  border-radius: 0; /* 直角 */
+  border-radius: 0;
   background: white;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -67,33 +67,34 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  font-family: var(--serif, 'Noto Serif', 'Noto Serif TC', serif);
 }
 
 .retry-button {
-  border-color: #8b0000;
-  color: #8b0000;
+  border-color: #b3352c;
+  color: #b3352c;
 }
 
 .retry-button:hover {
-  background: #8b0000;
-  color: #f5f5dc;
-  box-shadow: 3px 3px 0 #2c2c2c;
+  background: #b3352c;
+  color: #f3ead3;
+  box-shadow: 3px 3px 0 #37291a;
   transform: translate(-1px, -1px);
 }
 
 .retry-button:active {
   transform: translate(0, 0);
-  box-shadow: 1px 1px 0 #2c2c2c;
+  box-shadow: 1px 1px 0 #37291a;
 }
 
 .fallback-button {
-  border-color: #2c2c2c;
-  color: #2c2c2c;
+  border-color: #37291a;
+  color: #37291a;
 }
 
 .fallback-button:hover {
-  background: #2c2c2c;
-  color: #f5f5dc;
+  background: #37291a;
+  color: #f3ead3;
   box-shadow: 3px 3px 0 #8b7557;
   transform: translate(-1px, -1px);
 }
@@ -117,21 +118,27 @@
   .error-container {
     padding: 32px 16px;
   }
-  
+
   .error-title-zh {
     font-size: 18px;
   }
-  
+
   .error-title-en {
     font-size: 14px;
   }
-  
+
   .error-actions {
     flex-direction: column;
     align-items: stretch;
   }
-  
+
   .error-button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-talisman {
+    animation: none;
   }
 }
