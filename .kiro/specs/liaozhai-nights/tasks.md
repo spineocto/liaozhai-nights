@@ -33,21 +33,21 @@
     - 設定 API 金鑰讀取機制（僅後端）
     - _Requirements: 2.2, 8.1_
 
-- [ ] 2. 核心型別定義與介面
-  - [ ] 2.1 定義故事引擎核心型別
+- [x] 2. 核心型別定義與介面
+  - [x] 2.1 定義故事引擎核心型別
     - 建立 `/src/types/story.ts`
     - 定義 `Scene`, `Choice`, `StoryState`, `Translation` 介面
     - 定義生物類型 (`CreatureType`) 與場景類型 (`SceneType`) 列舉
     - _Requirements: 1.1, 1.5_
   
-  - [ ] 2.2 定義 API 請求與回應型別
+  - [x] 2.2 定義 API 請求與回應型別
     - 建立 `/src/types/api.ts`
     - 定義 `StoryRequest`, `StoryResponse`, `TranslateRequest`, `TranslateResponse` 介面
     - 定義錯誤狀態型別 (`ErrorState`)
     - _Requirements: 2.1, 2.2, 12.1_
 
-- [ ] 3. 後端 API 實作
-  - [ ] 3.1 實作 Gemini AI 呼叫包裝函式
+- [x] 3. 後端 API 實作
+  - [x] 3.1 實作 Gemini AI 呼叫包裝函式
     - 建立 `/api/lib/gemini.ts`
     - 實作 `callGeminiWithRetry` 函式（含重試邏輯：2s, 5s, 15s）
     - 實作請求超時處理（20 秒）
@@ -60,7 +60,7 @@
     - 測試錯誤碼處理（429, 5xx）
     - _Requirements: 2.4_
   
-  - [ ] 3.3 實作 `/api/story` 端點
+  - [x] 3.3 實作 `/api/story` 端點
     - 建立 `/api/story.ts` serverless function
     - 驗證傳入請求格式（使用 **Property 12**）
     - 根據故事狀態構建 Gemini prompt
@@ -74,7 +74,7 @@
     - 測試備用場景機制
     - _Requirements: 2.2, 8.4_
   
-  - [ ] 3.5 實作 `/api/translate` 端點
+  - [x] 3.5 實作 `/api/translate` 端點
     - 建立 `/api/translate.ts` serverless function
     - 驗證傳入請求（句子與上下文）
     - 呼叫 Gemini 生成現代中文與英文翻譯
@@ -92,7 +92,7 @@
   - 確認 API 金鑰保護機制運作正常
   - 如有問題請詢問使用者
 
-- [ ] 5. 故事引擎實作
+- [x] 5. 故事引擎實作
   - [ ] 5.1 實作故事狀態管理 (StoryEngine)
     - 建立 `/src/services/StoryEngine.ts`
     - 實作場景轉換邏輯 (`transitionToScene`)
@@ -119,7 +119,7 @@
     - 使用 `endingSceneArbitrary` 生成測試資料
     - 驗證結局場景的完成狀態與選擇欄位
   
-  - [ ] 5.5 實作 SessionStorage 持久化服務
+  - [x] 5.5 實作 SessionStorage 持久化服務
     - 建立 `/src/services/StorageService.ts`
     - 實作 `saveStoryState`, `loadStoryState`, `clearStoryState` 函式
     - 實作 QuotaExceededError 錯誤處理
@@ -138,7 +138,7 @@
     - 生成隨機選擇序列
     - 驗證 `choiceHistory` 正確追蹤所有選擇
 
-- [ ] 6. 翻譯服務實作
+- [x] 6. 翻譯服務實作
   - [ ] 6.1 實作翻譯快取管理 (TranslationService)
     - 建立 `/src/services/TranslationService.ts`
     - 實作 `getTranslation` 函式（先檢查快取，未命中則呼叫 API）
@@ -152,8 +152,8 @@
     - 測試快取清除機制
     - _Requirements: 4.5_
 
-- [ ] 7. 基礎 UI 元件實作
-  - [ ] 7.1 建立 BookContainer 元件（書本容器）
+- [x] 7. 基礎 UI 元件實作
+  - [x] 7.1 建立 BookContainer 元件（書本容器）
     - 建立 `/src/components/BookContainer.tsx`
     - 實作宣紙紋理背景樣式
     - 實作書本邊框與陰影效果
@@ -178,7 +178,7 @@
     - 實作角落或邊框符咒配置
     - _Requirements: 5.5_
 
-- [ ] 8. 場景顯示元件實作
+- [x] 8. 場景顯示元件實作
   - [ ] 8.1 建立 NarrativeText 元件（敘事文字）
     - 建立 `/src/components/NarrativeText.tsx`
     - 使用水墨筆刷風格字體（Google Fonts: Noto Serif TC 或 Ma Shan Zheng）
@@ -211,14 +211,14 @@
     - 使用行動裝置視口尺寸測試資料（寬度 < 768px）
     - 驗證所有互動元素的尺寸
   
-  - [ ] 8.6 建立 SceneView 元件（場景檢視）
+  - [x] 8.6 建立 SceneView 元件（場景檢視）
     - 建立 `/src/components/SceneView.tsx`
     - 整合 NarrativeText 與 ChoiceButtons
     - 實作場景切換時的淡入淡出效果
     - 處理選擇點擊事件
     - _Requirements: 1.1, 1.2, 1.3_
 
-- [ ] 9. 結局顯示與翻譯互動元件
+- [x] 9. 結局顯示與翻譯互動元件
   - [ ] 9.1 建立 InteractiveSentence 元件（可點擊句子）
     - 建立 `/src/components/InteractiveSentence.tsx`
     - 實作句子分割邏輯（按句號、驚嘆號、問號分割）
@@ -259,7 +259,7 @@
     - 實作與 TranslationOverlay 的互動
     - _Requirements: 3.1, 4.1_
   
-  - [ ] 9.7 建立 EndingView 元件（結局檢視）
+  - [x] 9.7 建立 EndingView 元件（結局檢視）
     - 建立 `/src/components/EndingView.tsx`
     - 顯示文言文結局（使用 ClassicalText）
     - 顯示現代中文與英文翻譯（視覺區分）
@@ -298,15 +298,15 @@
     - 測試多次連續翻頁效能
     - _Requirements: 11.3_
 
-- [ ] 12. 載入與錯誤處理 UI
-  - [ ] 12.1 建立 LoadingIndicator 元件（載入指示器）
+- [x] 12. 載入與錯誤處理 UI
+  - [x] 12.1 建立 LoadingIndicator 元件（載入指示器）
     - 建立 `/src/components/LoadingIndicator.tsx`
     - 設計古風載入動畫（例如：旋轉的八卦圖或蠟燭閃爍）
     - 顯示雙語載入文字（「故事生成中... / Generating story...」）
     - 實作平滑淡入淡出
     - _Requirements: 11.2, 11.5_
   
-  - [ ] 12.2 建立 ErrorMessage 元件（錯誤訊息）
+  - [x] 12.2 建立 ErrorMessage 元件（錯誤訊息）
     - 建立 `/src/components/ErrorMessage.tsx`
     - 實作「符咒警示」風格設計（紅色或淡黃宣紙背景、符咒邊框）
     - 顯示雙語錯誤訊息
@@ -320,8 +320,8 @@
     - 測試備用場景載入
     - _Requirements: 12.1, 12.2, 12.5_
 
-- [ ] 13. 主應用程式整合
-  - [ ] 13.1 實作主 App 元件
+- [x] 13. 主應用程式整合
+  - [x] 13.1 實作主 App 元件
     - 建立 `/src/App.tsx`
     - 整合所有子元件（BookContainer, PageWrapper, SceneView, EndingView, LoadingIndicator, ErrorMessage）
     - 實作應用程式狀態管理（使用 React hooks）
@@ -329,7 +329,7 @@
     - 處理 API 呼叫與錯誤
     - _Requirements: 1.1, 1.3, 2.1, 2.4_
   
-  - [ ] 13.2 實作 API 客戶端服務
+  - [x] 13.2 實作 API 客戶端服務
     - 建立 `/src/services/ApiClient.ts`
     - 實作 `fetchStory` 函式（呼叫 `/api/story`）
     - 實作 `fetchTranslation` 函式（呼叫 `/api/translate`）
@@ -342,14 +342,14 @@
     - 生成無效請求資料（缺少欄位、型別錯誤）
     - 驗證後端回傳 400 且不呼叫 AI 服務
   
-  - [ ] 13.4 實作備用場景資料
+  - [x] 13.4 實作備用場景資料
     - 建立 `/src/data/fallbackScenes.ts`
     - 撰寫至少 1 個開場場景
     - 撰寫至少 3 個結局場景（每種生物類型一個）
     - 包含完整的文言文、現代中文、英文翻譯
     - _Requirements: 2.4_
   
-  - [ ] 13.5 實作遊戲初始化與重置邏輯
+  - [x] 13.5 實作遊戲初始化與重置邏輯
     - 實作應用程式啟動時載入儲存的狀態
     - 實作「重新開始」功能（清除狀態並回到開場）
     - 實作結局後的遊戲重置選項
