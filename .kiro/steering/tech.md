@@ -22,3 +22,10 @@
   - have a few **pre-written fallback scenes/endings** in the code so the demo still works if the quota runs out;
   - set a request timeout (~20s).
 - Free-tier prompts may be used by Google to improve its products, so never send users' personal data to the model.
+
+## Git 工作流程
+
+- 每完成幾個任務後，就要 commit 一次。不要一次累積太多變更。
+- Commit 訊息用繁體中文寫，簡短說明做了什麼（例如：「新增首頁元件和路由」、「實作故事引擎核心邏輯」）。
+- Commit 後記得 Sync/Push 到遠端儲存庫，這樣進度就不會遺失。
+- 在 VS Code 左側點「原始碼管理」→ 寫說明 → 點「認可」（Commit）→ 點「同步變更」（Sync）。

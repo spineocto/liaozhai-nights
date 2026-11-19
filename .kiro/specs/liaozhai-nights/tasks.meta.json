@@ -1,0 +1,22 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. 專案初始化與基礎設定": [
+      {
+        "executionId": "82bcdf92-0041-4aaf-88fb-5b23661bc4c0",
+        "chatSessionId": "sess_dd8cac22-20a7-4405-ad86-bc3e667884db",
+        "timestamp": 1795088785189
+      },
+      {
+        "executionId": "e910c15a-bd70-4d3a-bfad-33160a6856d3",
+        "chatSessionId": "sess_dd8cac22-20a7-4405-ad86-bc3e667884db",
+        "timestamp": 1795090443246
+      },
+      {
+        "executionId": "e910c15a-bd70-4d3a-bfad-33160a6856d3",
+        "chatSessionId": "sess_dd8cac22-20a7-4405-ad86-bc3e667884db",
+        "timestamp": 1795090446753
+      }
+    ]
+  }
+}

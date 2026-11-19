@@ -11,6 +11,11 @@ build/
 .env.*
 !.env.example
 
+# testing
+coverage/
+.nyc_output/
+*.log
+
 # OS
 .DS_Store
 Thumbs.db
