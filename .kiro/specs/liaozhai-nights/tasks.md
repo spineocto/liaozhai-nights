@@ -6,7 +6,7 @@
 
 ## Tasks
 
-- [-] 1. 專案初始化與基礎設定
+- [x] 1. 專案初始化與基礎設定
   - [ ] 1.1 建立 React + TypeScript + Vite 專案結構
     - 使用 `npm create vite@latest . -- --template react-ts` 初始化專案
     - 安裝核心依賴：React 18+, TypeScript, Vite
